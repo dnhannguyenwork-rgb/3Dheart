@@ -1,0 +1,106 @@
+/* ===== 1. MÀU SẮC DÙNG CHUNG: đổi màu ở đây là đổi cả trang ===== */
+:root {
+  --dark: #0d2027;    /* nền tối */
+  --green: #1a8a72;   /* màu nhấn */
+  --mint: #bfe8d6;    /* xanh nhạt */
+  --bg: #f2f1ee;      /* nền trang */
+  --text: #1c2b30;    /* màu chữ */
+}
+ 
+/* ===== 2. THIẾT LẬP CHUNG ===== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+img { max-width: 100%; height: auto; }
+ 
+/* ===== 3. THANH MENU ===== */
+.topbar {
+  position: sticky; top: 0;
+  display: flex; flex-wrap: wrap;
+  justify-content: space-between; align-items: center;
+  padding: 12px 24px;
+  background: var(--dark);
+}
+.brand { color: #fff; font-size: 20px; font-weight: bold; text-decoration: none; }
+nav a { color: var(--mint); margin-left: 18px; text-decoration: none; }
+nav a:hover { color: #fff; }
+ 
+/* ===== 4. PHẦN MỞ ĐẦU ===== */
+.hero {
+  padding: 64px 24px;
+  text-align: center;
+  color: #fff;
+  background: var(--dark);
+}
+.hero h1 { margin: 0; font-size: 56px; }
+.hero p { max-width: 640px; margin: 12px auto; }
+.tag { color: var(--mint); font-weight: bold; letter-spacing: 2px; }
+.lead { font-size: 22px; color: var(--mint); }
+.btn {
+  display: inline-block; margin: 16px 6px 0; padding: 10px 22px;
+  border: 2px solid var(--mint); border-radius: 8px;
+  background: var(--mint); color: var(--dark);
+  font-weight: bold; text-decoration: none;
+}
+.btn.ghost { background: transparent; color: var(--mint); }
+ 
+/* ===== 5. CÁC MỤC NỘI DUNG ===== */
+main { max-width: 960px; margin: 0 auto; padding: 0 20px 40px; }
+section { scroll-margin-top: 60px; }
+main section {
+  margin-top: 28px; padding: 24px 28px;
+  background: #fff; border-radius: 14px;
+}
+h2 { margin-top: 0; padding-bottom: 6px; border-bottom: 3px solid var(--mint); }
+.note { padding: 12px 16px; border-left: 4px solid var(--green); background: #eaf6f1; }
+.small { font-size: 14px; color: #5b6b70; }
+ 
+/* ===== 6. LƯỚI THẺ TÍNH NĂNG: tự xuống hàng khi màn hình hẹp ===== */
+.grid {
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.card { padding: 16px; border: 1px solid #d9e2df; border-radius: 10px; }
+.card h3 { margin: 0 0 6px; color: var(--green); }
+.card p { margin: 0; }
+ 
+/* ===== 7. HÌNH ẢNH, BẢNG, KHỐI LỆNH ===== */
+figure { margin: 20px 0 0; }
+figure img { border: 1px solid #d9e2df; border-radius: 10px; }
+figcaption { margin-top: 6px; font-size: 14px; text-align: center; color: #5b6b70; }
+.steps li { margin-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid #d9e2df; }
+th { background: #e7f3f1; }
+.dot {
+  display: inline-block; width: 12px; height: 12px;
+  margin-right: 8px; border-radius: 50%;
+}
+.c1 { background: #dc3545; }  .c2 { background: #3b82f6; }
+.c3 { background: #f08c3a; }  .c4 { background: #22d3ee; }
+.c5 { background: #eab308; }  .c6 { background: #a78bfa; }
+.c7 { background: #34d399; }  .c8 { background: #ec4899; }
+code { padding: 2px 6px; border-radius: 4px; background: #e7f3f1; }
+pre {
+  padding: 16px; overflow-x: auto; border-radius: 10px;
+  background: var(--dark); color: var(--mint);
+}
+ 
+/* ===== 8. CHÂN TRANG ===== */
+footer { padding: 24px; text-align: center; background: var(--dark); color: #cfe3dc; }
+footer p { margin: 4px 0; }
+ 
+/* ===== 9. ĐIỆN THOẠI: màn hình hẹp hơn 600px ===== */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 40px; }
+  .topbar { justify-content: center; padding: 10px 12px; }
+  nav { width: 100%; text-align: center; }
+  nav a { margin: 0 6px; font-size: 13px; }
+  main section { padding: 18px; }
+}
